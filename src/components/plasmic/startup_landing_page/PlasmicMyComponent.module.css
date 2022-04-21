@@ -1,0 +1,16 @@
+.root {
+  display: block;
+  mix-blend-mode: multiply;
+  background: #e4e4e4;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  height: 100%;
+  position: relative;
+  min-height: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+}

@@ -31,6 +31,9 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import MyNewComponent from "../../MyNewComponent"; // plasmic-import: AugnnAEu1k/component
+import MyComponent from "../../MyComponent"; // plasmic-import: tuy2jZAPNO/component
+import OneMoreComponent from "../../OneMoreComponent"; // plasmic-import: BgyRZ5NYRVL/component
 import Password from "antd/lib/input/Password"; // plasmic-import: fTDg0FM1tnD/codeComponent
 
 import { useScreenVariants as useScreenVariants_6Go3K29GaSCqa } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: 6GO3K29gaSCqa/globalVariant
@@ -52,7 +55,6 @@ import integrationsHeadersvgF7MW04NoRu9P from "./images/integrationsHeadersvg.sv
 import foodDeliveryScooterPngPhotopng5SAZdf6YmMwy from "./images/foodDeliveryScooterPngPhotopng.png"; // plasmic-import: 5S_AZdf6YmMWY/picture
 import lightningRemovebgPreviewpngFWr85SqOmcq1 from "./images/lightningRemovebgPreviewpng.png"; // plasmic-import: fWR85sqOmcq1_/picture
 import c519F38487C89Fadc75B13Ae907Ab12FRemovebgPreviewpngEkmRrzRn1VFwp from "./images/c519F38487C89Fadc75B13Ae907Ab12FRemovebgPreviewpng.png"; // plasmic-import: ekmRrzRn1VFwp/picture
-import _11607942448Eynexrk8MlRemovebgPreviewpngVppwsEdHxGV4 from "./images/_11607942448Eynexrk8MlRemovebgPreviewpng.png"; // plasmic-import: VppwsEdHx_gV4/picture
 import logo1Svg2SVoEsf46DN6MR from "./images/logo1Svg2.svg"; // plasmic-import: SVoESF46dN6mR/picture
 
 export type PlasmicHomepage__VariantMembers = {};
@@ -61,9 +63,12 @@ export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
 export const PlasmicHomepage__VariantProps = new Array<VariantPropType>();
 
-export type PlasmicHomepage__ArgsType = {};
+export type PlasmicHomepage__ArgsType = {
+  children?: React.ReactNode;
+};
+
 type ArgPropType = keyof PlasmicHomepage__ArgsType;
-export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
+export const PlasmicHomepage__ArgProps = new Array<ArgPropType>("children");
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
@@ -71,16 +76,14 @@ export type PlasmicHomepage__OverridesType = {
   button?: p.Flex<"button">;
   h1?: p.Flex<"h1">;
   art?: p.Flex<"div">;
-  background2?: p.Flex<"div">;
   copy?: p.Flex<"div">;
   copy2?: p.Flex<"div">;
   art2?: p.Flex<"div">;
-  copy3?: p.Flex<"div">;
-  art3?: p.Flex<"div">;
   antdInputPassword?: p.Flex<typeof Password>;
 };
 
 export interface DefaultHomepageProps {
+  children?: React.ReactNode;
   className?: string;
 }
 
@@ -391,14 +394,13 @@ function PlasmicHomepage__RenderFunc(props: {
               <h1
                 data-plasmic-name={"h1"}
                 data-plasmic-override={overrides.h1}
-                className={classNames(
-                  projectcss.all,
-                  projectcss.h1,
-                  projectcss.__wab_text,
-                  sty.h1
-                )}
+                className={classNames(projectcss.all, projectcss.h1, sty.h1)}
               >
-                {"Hero text for your startup's product."}
+                {p.renderPlasmicSlot({
+                  defaultContents: "Hero text for your startup's product.",
+                  value: args.children,
+                  className: classNames(sty.slotTargetChildren)
+                })}
               </h1>
 
               <div
@@ -412,6 +414,17 @@ function PlasmicHomepage__RenderFunc(props: {
                   ? "This is introduction text describing why people should use your product. Double-click anywhere on the text to edit it's contents."
                   : "Lorem Ipsum is simply dummy text of the \nprinting and typesetting industry. "}
               </div>
+
+              <MyNewComponent
+                className={classNames(
+                  "__wab_instance",
+                  sty.myNewComponent___05YjP
+                )}
+              />
+
+              <MyComponent
+                className={classNames("__wab_instance", sty.myComponent__wn0Hw)}
+              />
 
               {true ? (
                 <p.PlasmicImg
@@ -440,6 +453,13 @@ function PlasmicHomepage__RenderFunc(props: {
           </div>
 
           <div className={classNames(projectcss.all, sty.freeBox__ak9Ry)}>
+            <MyNewComponent
+              className={classNames(
+                "__wab_instance",
+                sty.myNewComponent___4TEcS
+              )}
+            />
+
             <p.Stack
               as={"div"}
               hasGap={true}
@@ -498,10 +518,11 @@ function PlasmicHomepage__RenderFunc(props: {
                       }}
                     />
 
-                    <div
-                      data-plasmic-name={"background2"}
-                      data-plasmic-override={overrides.background2}
-                      className={classNames(projectcss.all, sty.background2)}
+                    <MyComponent
+                      className={classNames(
+                        "__wab_instance",
+                        sty.myComponent__zV8
+                      )}
                     />
                   </div>
 
@@ -974,94 +995,21 @@ function PlasmicHomepage__RenderFunc(props: {
 
           <div className={classNames(projectcss.all, sty.freeBox__iiX7J)}>
             <div className={classNames(projectcss.all, sty.freeBox__gr60V)}>
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__agT9Q)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__pprGx)}>
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox___7HxK)}
-                  >
-                    <p.Stack
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.freeBox__ptx86)}
-                    >
-                      <p.Stack
-                        as={"div"}
-                        data-plasmic-name={"copy3"}
-                        data-plasmic-override={overrides.copy3}
-                        hasGap={true}
-                        className={classNames(projectcss.all, sty.copy3)}
-                      >
-                        <p.Stack
-                          as={"div"}
-                          hasGap={true}
-                          className={classNames(
-                            projectcss.all,
-                            sty.freeBox__bXolx
-                          )}
-                        >
-                          <h3
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.h3,
-                              projectcss.__wab_text,
-                              sty.h3__f9Zu
-                            )}
-                          >
-                            {hasVariant(globalVariants, "screen", "mobileOnly")
-                              ? "Trusted by thousands of companies"
-                              : "Lorem Ipsum is simply dummy text"}
-                          </h3>
-
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__xkj7Q
-                            )}
-                          >
-                            {
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
-                            }
-                          </div>
-                        </p.Stack>
-                      </p.Stack>
-                    </p.Stack>
-                  </div>
-
-                  <div
-                    data-plasmic-name={"art3"}
-                    data-plasmic-override={overrides.art3}
-                    className={classNames(projectcss.all, sty.art3)}
-                  >
-                    <p.PlasmicImg
-                      alt={""}
-                      className={classNames(sty.img__dULsh)}
-                      displayHeight={
-                        hasVariant(globalVariants, "screen", "mobileOnly")
-                          ? ("220px" as const)
-                          : ("399px" as const)
-                      }
-                      displayMaxHeight={"none" as const}
-                      displayMaxWidth={"none" as const}
-                      displayMinHeight={"0" as const}
-                      displayMinWidth={"0" as const}
-                      displayWidth={"100%" as const}
-                      src={{
-                        src: _11607942448Eynexrk8MlRemovebgPreviewpngVppwsEdHxGV4,
-                        fullWidth: 480,
-                        fullHeight: 517,
-                        aspectRatio: undefined
-                      }}
-                    />
-                  </div>
-                </div>
-              </p.Stack>
+              <OneMoreComponent
+                className={classNames(
+                  "__wab_instance",
+                  sty.oneMoreComponent__tdHax
+                )}
+              />
             </div>
           </div>
+
+          <OneMoreComponent
+            className={classNames(
+              "__wab_instance",
+              sty.oneMoreComponent___2Qnce
+            )}
+          />
 
           <Password
             data-plasmic-name={"antdInputPassword"}
@@ -1070,6 +1018,13 @@ function PlasmicHomepage__RenderFunc(props: {
           />
 
           <div className={classNames(projectcss.all, sty.freeBox__uHKxU)}>
+            <MyNewComponent
+              className={classNames(
+                "__wab_instance",
+                sty.myNewComponent___8Yoor
+              )}
+            />
+
             <p.Stack
               as={"div"}
               hasGap={true}
@@ -1695,24 +1650,18 @@ const PlasmicDescendants = {
     "button",
     "h1",
     "art",
-    "background2",
     "copy",
     "copy2",
     "art2",
-    "copy3",
-    "art3",
     "antdInputPassword"
   ],
   headerSliderSection: ["headerSliderSection", "button", "h1"],
   button: ["button"],
   h1: ["h1"],
-  art: ["art", "background2"],
-  background2: ["background2"],
+  art: ["art"],
   copy: ["copy"],
   copy2: ["copy2"],
   art2: ["art2"],
-  copy3: ["copy3"],
-  art3: ["art3"],
   antdInputPassword: ["antdInputPassword"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -1724,12 +1673,9 @@ type NodeDefaultElementType = {
   button: "button";
   h1: "h1";
   art: "div";
-  background2: "div";
   copy: "div";
   copy2: "div";
   art2: "div";
-  copy3: "div";
-  art3: "div";
   antdInputPassword: typeof Password;
 };
 
@@ -1794,12 +1740,9 @@ export const PlasmicHomepage = Object.assign(
     button: makeNodeComponent("button"),
     h1: makeNodeComponent("h1"),
     art: makeNodeComponent("art"),
-    background2: makeNodeComponent("background2"),
     copy: makeNodeComponent("copy"),
     copy2: makeNodeComponent("copy2"),
     art2: makeNodeComponent("art2"),
-    copy3: makeNodeComponent("copy3"),
-    art3: makeNodeComponent("art3"),
     antdInputPassword: makeNodeComponent("antdInputPassword"),
 
     // Metadata about props expected for PlasmicHomepage
